@@ -104,4 +104,10 @@ describe('Lottery contract', () => {
         assert(difference > web3.utils.toWei('1.8', 'ether'));
         assert.strictEqual(players.length, 0);
     });
+
+    it('gives the address of the winner', async () => {
+        const lastWinner = await lottery.methods.lastwinner().call();
+
+        assert(lastWinner)
+    })
 });
